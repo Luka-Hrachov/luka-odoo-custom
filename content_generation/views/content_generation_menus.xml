@@ -4,5 +4,5 @@
     <menuitem id="menu_content_generation_root" name="Content Generation" sequence="1"/>
 
     <!-- Submenu (without action) -->
-    <menuitem id="menu_content_generation_card" name="Card" parent="menu_content_generation_root" sequence="1"/>
+    <menuitem id="menu_content_generation_card" name="Cards" parent="menu_content_generation_root" sequence="1"/>
 </odoo>
