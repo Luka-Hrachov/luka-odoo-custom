@@ -3,5 +3,6 @@
     "author": "Luka Hrachov",
     "version": "1.0.0",
     "depends": ["base"],
-    "description": """Module for content generation"""
+    "description": """Module for content generation""",
+    "category": "Technical"
 }
