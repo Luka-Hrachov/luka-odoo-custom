@@ -1,0 +1,21 @@
+name: Deploy to Odoo Server
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /www/wwwroot/odoo/extra-addons/luka-odoo-custom
+            git pull origin main
+            cd /www/wwwroot/odoo
+            docker-compose restart odoo
