@@ -6,5 +6,6 @@
     "description": """Module for content generation""",
     "category": "Technical",
     "website": "content-generation.com",
-    "application": True
+    "application": True,
+    "license": "LGPL-3"
 }
