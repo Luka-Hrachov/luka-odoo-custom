@@ -7,5 +7,6 @@
     "category": "Technical",
     "website": "content-generation.com",
     "application": True,
-    "license": "LGPL-3"
+    "license": "LGPL-3",
+    "data": ["views/content_generation.xml"]
 }
