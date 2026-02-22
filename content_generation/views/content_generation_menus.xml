@@ -5,4 +5,8 @@
 
     <!-- Submenu (without action) -->
     <menuitem id="menu_content_generation_card" name="Cards" parent="menu_content_generation_root" sequence="1"/>
+
+    <!-- Submenus (with actions) -->
+    <menuitem id="menu_generation_card" name="Generation Card" parent="menu_content_generation_card" sequence="2"/>
+    <menuitem id="menu_editing_card" name="Editing Card" parent="menu_content_generation_card" sequence="3"/>
 </odoo>
