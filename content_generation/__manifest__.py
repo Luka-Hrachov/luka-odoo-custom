@@ -5,5 +5,6 @@
     "depends": ["base"],
     "description": """Module for content generation""",
     "category": "Technical",
-    "website": "content-generation.com"
+    "website": "content-generation.com",
+    "application": True
 }
