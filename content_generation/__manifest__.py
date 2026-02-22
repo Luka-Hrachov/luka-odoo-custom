@@ -9,7 +9,7 @@
     "application": True,
     "license": "LGPL-3",
     "data": [
-        "views/content_generation_actions.xml"
+        "views/content_generation_actions.xml",
         "views/content_generation_menus.xml"
     ]
 }
