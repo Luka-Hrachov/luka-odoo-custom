@@ -4,5 +4,6 @@
     "version": "1.0.0",
     "depends": ["base"],
     "description": """Module for content generation""",
-    "category": "Technical"
+    "category": "Technical",
+    "website": "content-generation.com"
 }
