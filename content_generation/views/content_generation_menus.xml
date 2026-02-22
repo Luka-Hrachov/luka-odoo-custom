@@ -8,7 +8,7 @@
 
     <!-- Submenus (with actions) -->
     <menuitem id="menu_generation_card" name="Generation Card" parent="menu_content_generation_card" sequence="2"
-              action="stock.product_template_action_product"/>
+              action="content_generation.action_content_generation"/>
     <menuitem id="menu_editing_card" name="Editing Card" parent="menu_content_generation_card" sequence="3"
-              action="contacts.action_contacts"/>
+              action="content_generation.action_content_generation"/>
 </odoo>
