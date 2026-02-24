@@ -19,6 +19,12 @@
                             <field name="notes" widget="CopyClipboardChar"/>
                         </group>
                     </group>
+                    <group>
+                        <field name="initial_product_name"/>
+                        <field name="initial_category_name"/>
+                        <field name="initial_blog_title"/>
+                        <field name="initial_set_name"/>
+                    </group>
                 </sheet>
             </form>
         </field>
