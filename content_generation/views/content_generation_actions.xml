@@ -20,10 +20,10 @@
                         </group>
                     </group>
                     <group>
-                        <field name="initial_product_name" invisable="content_type != 'product'"/>
-                        <field name="initial_category_name" invisable="content_type != 'category'"/>
-                        <field name="initial_blog_title" invisable="content_type != 'blog'"/>
-                        <field name="initial_set_name" invisable="content_type != 'set'"/>
+                        <field name="initial_product_name" invisible="content_type != 'product'"/>
+                        <field name="initial_category_name" invisible="content_type != 'category'"/>
+                        <field name="initial_blog_title" invisible="content_type != 'blog'"/>
+                        <field name="initial_set_name" invisible="content_type != 'set'"/>
                     </group>
                 </sheet>
             </form>
