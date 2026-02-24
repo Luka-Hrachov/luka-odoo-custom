@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Form view -->
-    <record model="ir.ui.view" id="generation_card_view_form">
+    <record model="ir.ui.view" id="generation.card.view.form">
         <field name="name">generation.card.view.form</field>
         <field name="model">generation.card</field>
         <field name="arch" type="xml">
