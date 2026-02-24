@@ -7,9 +7,13 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                    </group>
+                    <!-- Заголовок картки -->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Card name..."/>
+                        </h1>
+                    </div>
+
                     <group>
                         <group>
                             <field name="base_language_id"/>
@@ -19,12 +23,18 @@
                             <field name="notes" widget="CopyClipboardChar"/>
                         </group>
                     </group>
-                    <group>
-                        <field name="initial_product_name" invisible="content_type != 'product'"/>
-                        <field name="initial_category_name" invisible="content_type != 'category'"/>
-                        <field name="initial_blog_title" invisible="content_type != 'blog'"/>
-                        <field name="initial_set_name" invisible="content_type != 'set'"/>
-                    </group>
+
+                    <!-- Кастомна секція з заголовком -->
+                    <span class="o_form_label fw-bold">Initial Content</span>
+                    <div class="mb-3">
+                        <field name="initial_product_name" invisible="content_type != 'product'"
+                               placeholder="Product name..."/>
+                        <field name="initial_category_name" invisible="content_type != 'category'"
+                               placeholder="Category name..."/>
+                        <field name="initial_blog_title" invisible="content_type != 'blog'"
+                               placeholder="Blog title..."/>
+                        <field name="initial_set_name" invisible="content_type != 'set'" placeholder="Set name..."/>
+                    </div>
                 </sheet>
             </form>
         </field>
