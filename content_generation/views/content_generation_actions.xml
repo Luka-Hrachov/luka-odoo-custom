@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <!-- Form view -->
+    <record model="ir.ui.view" id="generation_card_view_form">
+        <field name="name">generation.card.view.form</field>
+        <field name="model">generation.card</field>
+        <field name="arch" type="xml">
+            <form>
+
+            </form>
+        </field>
+    </record>
+
     <!-- Window action -->
     <record id="action_content_generation" model="ir.actions.act_window">
         <field name="name">Content Generation</field>
