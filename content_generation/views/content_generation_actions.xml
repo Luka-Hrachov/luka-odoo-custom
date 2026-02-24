@@ -8,10 +8,14 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="base_language_id"/>
-                        <field name="content_type"/>
-                        <field name="notes"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="base_language_id"/>
+                        </group>
+                        <group>
+                            <field name="content_type"/>
+                            <field name="notes"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
