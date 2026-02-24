@@ -6,10 +6,12 @@
         <field name="model">generation.card</field>
         <field name="arch" type="xml">
             <form>
-                <field name="name"/>
-                <field name="base_language_id"/>
-                <field name="content_type"/>
-                <field name="notes"/>
+                <group>
+                    <field name="name"/>
+                    <field name="base_language_id"/>
+                    <field name="content_type"/>
+                    <field name="notes"/>
+                </group>
             </form>
         </field>
     </record>
