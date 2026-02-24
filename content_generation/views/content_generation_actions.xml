@@ -16,7 +16,7 @@
                         </group>
                         <group>
                             <field name="content_type"/>
-                            <field name="notes"/>
+                            <field name="notes" widget="CopyClipboardChar"/>
                         </group>
                     </group>
                 </sheet>

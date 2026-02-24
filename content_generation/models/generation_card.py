@@ -13,4 +13,9 @@ class GenerationCard(models.Model):
         ('category', 'Category'),
         ('blog', 'Blog')
     ])
+    initial_product_name = fields.Char(string='Initial Product Name')
+    initial_category_name = fields.Char(string='Initial Category Name')
+    initial_blog_title = fields.Char(string='Initial Blog Title')
+    initial_set_name = fields.Char(string='Initial Set Name')
+
     notes = fields.Text(string='Notes')
