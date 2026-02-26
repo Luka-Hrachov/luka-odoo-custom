@@ -5,7 +5,7 @@ class GenerationCard(models.Model):
     _name = 'generation.card'
     _description = 'Generation Card'
 
-    name = fields.Char(string='Name', required=True, tracking=True)
+    name = fields.Char(string='Name', required=True)
     base_language_id = fields.Many2one('res.lang', string='Base Language', required=True)
     content_type = fields.Selection([
         ('product', 'Product'),
@@ -18,7 +18,7 @@ class GenerationCard(models.Model):
     initial_blog_title = fields.Char(string='Initial Blog Title')
     initial_set_name = fields.Char(string='Initial Set Name')
     notes = fields.Text(string='Notes')
-    image_1920 = fields.Image(string='Main Image', tracking=True)
+    image_1920 = fields.Image(string='Main Image')
 
     width = fields.Float(string='Width')
     length = fields.Float(string='Length')
