@@ -40,10 +40,12 @@
                     </div>
                     <notebook>
                         <page string="Inventiry" name="inventory">
-                            <field  name="width"/>
-                            <field  name="length"/>
-                            <field  name="height"/>
-                            <field  name="weight"/>
+                            <group>
+                                <field name="width"/>
+                                <field name="length"/>
+                                <field name="height"/>
+                                <field name="weight"/>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
