@@ -39,7 +39,7 @@
                         <field name="initial_set_name" invisible="content_type != 'set'" placeholder="Set name..."/>
                     </div>
                     <notebook>
-                        <page string="Inventory" name="inventory">
+                        <page string="Inventory" name="inventory" invisible="content_type in ['category', 'blog']">
                             <group>
                                 <field name="width"/>
                                 <field name="length"/>
