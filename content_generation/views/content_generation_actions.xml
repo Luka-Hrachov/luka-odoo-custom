@@ -38,6 +38,9 @@
                                placeholder="Blog title..."/>
                         <field name="initial_set_name" invisible="content_type != 'set'" placeholder="Set name..."/>
                     </div>
+                    <notebook>
+                        <page></page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
