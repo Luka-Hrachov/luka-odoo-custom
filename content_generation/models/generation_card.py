@@ -20,3 +20,9 @@ class GenerationCard(models.Model):
     notes = fields.Text(string='Notes')
     image_1920 = fields.Image(string='Main Image')
 
+    width = fields.Float(string='Width')
+    length = fields.Float(string='Length')
+    height = fields.Float(string='Height')
+    weight = fields.Float(string='Weight')
+
+

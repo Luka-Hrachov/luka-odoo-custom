@@ -39,7 +39,12 @@
                         <field name="initial_set_name" invisible="content_type != 'set'" placeholder="Set name..."/>
                     </div>
                     <notebook>
-                        <page></page>
+                        <page string="Inventiry" name="inventory">
+                            <field  name="width"/>
+                            <field  name="length"/>
+                            <field  name="height"/>
+                            <field  name="weight"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
