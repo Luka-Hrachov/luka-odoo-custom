@@ -17,5 +17,6 @@ class GenerationCard(models.Model):
     initial_category_name = fields.Char(string='Initial Category Name')
     initial_blog_title = fields.Char(string='Initial Blog Title')
     initial_set_name = fields.Char(string='Initial Set Name')
-
     notes = fields.Text(string='Notes')
+    image_1920 = fields.Image(string='Main Image')
+
