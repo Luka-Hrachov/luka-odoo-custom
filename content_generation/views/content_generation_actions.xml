@@ -47,6 +47,9 @@
                                 <field name="weight"/>
                             </group>
                         </page>
+                        <page string="Shop Content" name="shop_content">
+
+                        </page>
                     </notebook>
                 </sheet>
             </form>
