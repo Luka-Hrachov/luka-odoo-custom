@@ -48,6 +48,8 @@
                             </group>
                         </page>
                         <page string="Shop Content" name="shop_content">
+                        </page>
+                        <page string="MP Content" name="mp_content" invisible="content_type not in ['product', 'set']">
 
                         </page>
                     </notebook>
