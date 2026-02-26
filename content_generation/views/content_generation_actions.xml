@@ -14,7 +14,7 @@
                                 <field name="name" placeholder="Card name..."/>
                             </h1>
                         </div>
-                        <field name="image_1920"/>
+                        <field name="image_1920" class="oe_avatar" widget="image"/>
                     </group>
 
                     <group>
