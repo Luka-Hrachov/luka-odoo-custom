@@ -9,6 +9,7 @@
     "application": True,
     "license": "LGPL-3",
     "data": [
+        "security/content_generation_security.xml",
         "security/ir.model.access.csv",
         "views/content_generation_actions.xml",
         "views/content_generation_menus.xml"
