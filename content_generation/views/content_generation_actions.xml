@@ -5,7 +5,7 @@
         <field name="name">generation.card.view.form</field>
         <field name="model">generation.card</field>
         <field name="arch" type="xml">
-            <form create="false" delete="false">
+            <form edit="false">
                 <sheet>
                     <!-- Заголовок картки -->
                     <group>
