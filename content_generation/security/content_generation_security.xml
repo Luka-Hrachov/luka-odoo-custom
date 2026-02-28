@@ -6,5 +6,6 @@
     </record>
     <record id="group_content_generation_product_generator" model="res.groups">
         <field name="name">Product Generator</field>
+        <field name="category_id" ref="module_content_generation"/>
     </record>
 </odoo>
