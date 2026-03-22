@@ -1,4 +1,5 @@
 {
     "name": "Google Sheets Importer",
-    "depends": ["base"]
+    "depends": ["base"],
+    "application": True
 }
