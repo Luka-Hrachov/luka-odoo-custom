@@ -7,6 +7,9 @@
     </record>
 
     <menuitem id="google_sheet_root_menu" name="Google Sheets Importer">
-
+        <menuitem id="google_sheet_second_menu" name="Imports">
+            <menuitem id="google_sheet_third_menu" name="Sheets" action="google_sheet_action">
+            </menuitem>
+        </menuitem>
     </menuitem>
 </odoo>
