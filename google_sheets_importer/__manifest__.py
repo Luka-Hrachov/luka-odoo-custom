@@ -4,6 +4,6 @@
     "application": True,
     "data": [
         "security/ir.model.access.csv",
-        "views/google_sheets_views.xml"
+        "views/google_sheet_views.xml"
     ]
 }
