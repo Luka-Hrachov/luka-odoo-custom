@@ -50,6 +50,21 @@
         </field>
     </record>
 
+    <record id="view_google_sheet_search" model="ir.ui.view">
+        <field name="name">google.sheet.search</field>
+        <field name="model">google.sheet</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="external_sheet_id"/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_by_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <menuitem id="google_sheet_root_menu" name="Google Sheets Importer">
         <menuitem id="google_sheet_second_menu" name="Imports">
             <menuitem id="google_sheet_third_menu" name="Sheets" action="google_sheet_action">
