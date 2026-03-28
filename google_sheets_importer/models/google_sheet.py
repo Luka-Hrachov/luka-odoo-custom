@@ -13,6 +13,8 @@ class GoogleSheet(models.Model):
         string='Fields',
         copy=True,
     )
+    ignore_empty_columns = fields.Boolean(default=False)
+    report_email = fields.Char(string='Report Email')
     active = fields.Boolean(default=True)
     state = fields.Selection([
         ('new', 'New'),
