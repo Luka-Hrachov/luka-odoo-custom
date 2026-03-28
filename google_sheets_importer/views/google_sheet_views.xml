@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="google_sheet_action" model="ir.actions.act_window">
+        <field name="name">Google Sheet Action</field>
+        <field name="res_model">google.sheet</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="google_sheet_root_menu" name="Google Sheets Importer">
+
+    </menuitem>
+</odoo>
