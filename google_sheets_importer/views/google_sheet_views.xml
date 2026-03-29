@@ -24,7 +24,7 @@
             <form>
                 <header>
                     <button name="action_start_import" string="Start Import" type="object" class="oe_highlight"
-                            invisible="[('state', '!=', 'new')]"/>
+                            invisible="state != 'new'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
