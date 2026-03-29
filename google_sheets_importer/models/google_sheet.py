@@ -6,6 +6,12 @@ class GoogleSheet(models.Model):
     _description = 'Google Sheet Import'
 
     name = fields.Char(required=True)
+    user_id = fields.Many2one(
+        'res.users',
+        string='Responsible',
+        default=lambda self: self.env.user,
+        copy=False
+    )
     external_sheet_id = fields.Char(required=True, copy=False)
     line_ids = fields.One2many(
         comodel_name='google.sheet.line',
