@@ -1,4 +1,5 @@
 from odoo import fields, models, api
+from odoo.exceptions import UserError
 
 
 class GoogleSheet(models.Model):
@@ -66,6 +67,9 @@ class GoogleSheet(models.Model):
 
     def action_start_import(self):
         for record in self:
+            if not record.line_ids:
+                raise UserError('Cannot start import, no lines specified')
+
             record.state = 'importing'
         return True
 
