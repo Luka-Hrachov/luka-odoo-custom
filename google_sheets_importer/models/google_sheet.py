@@ -44,7 +44,7 @@ class GoogleSheet(models.Model):
     def _inverse_max_sequence(self):
         for record in self:
             for line in record.line_ids:
-                line.sequence = max(line.sequence, record.max_sequence)
+                line.sequence = min(line.sequence, record.max_sequence)
 
 class Google(models.Model):
     _name = 'google.sheet.tag'
