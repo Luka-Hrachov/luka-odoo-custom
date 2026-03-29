@@ -50,6 +50,7 @@
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle"/> <field name="sheet_column_name"/>
                                     <field name="odoo_field_id"/>
+                                    <field name="sequence"/>
                                 </list>
                             </field>
                         </page>
