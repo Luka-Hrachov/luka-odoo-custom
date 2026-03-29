@@ -5,6 +5,11 @@
         <field name="res_model">google.sheet</field>
         <field name="view_mode">list,form</field>
     </record>
+    <record id="google_sheet_tags_action" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">google.sheet.tag</field>
+        <field name="view_mode">list,form</field>
+    </record>
 
     <record id="view_google_sheet_list" model="ir.ui.view">
         <field name="name">google.sheet.list</field>
@@ -84,6 +89,8 @@
     <menuitem id="google_sheet_root_menu" name="Google Sheets Importer">
         <menuitem id="google_sheet_second_menu" name="Imports">
             <menuitem id="google_sheet_third_menu" name="Sheets" action="google_sheet_action">
+            </menuitem>
+            <menuitem id="google_sheet_tags_menu" name="Tags" action="google_sheet_tags_action">
             </menuitem>
         </menuitem>
     </menuitem>
