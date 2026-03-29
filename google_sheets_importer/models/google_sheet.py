@@ -48,10 +48,22 @@ class GoogleSheet(models.Model):
         else:
             self.report_email = False
 
+    @api.onchange('report_email')
+    def _onchange_report_email(self):
+        if self.ignore_empty_columns and (not self.report_email):
+            return {
+                'warning': {
+                    'title': 'Warning',
+                    'message': 'You must specify a report email address.'
+                }
+            }
+        return None
+
     def _inverse_max_sequence(self):
         for record in self:
             for line in record.line_ids:
                 line.sequence = min(line.sequence, record.max_sequence)
+
 
 class Google(models.Model):
     _name = 'google.sheet.tag'
