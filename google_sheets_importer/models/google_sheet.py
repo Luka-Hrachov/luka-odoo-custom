@@ -41,6 +41,13 @@ class GoogleSheet(models.Model):
         for record in self:
             record.max_sequence = max(record.line_ids.mapped('sequence'), default=0)
 
+    @api.onchange('ignore_empty_columns')
+    def _onchange_ignore_empty_columns(self):
+        if self.ignore_empty_columns:
+            self.report_email = self.env.user.login
+        else:
+            self.report_email = False
+
     def _inverse_max_sequence(self):
         for record in self:
             for line in record.line_ids:
