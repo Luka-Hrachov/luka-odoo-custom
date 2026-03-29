@@ -41,6 +41,7 @@
                             <field name="report_email"/>
                             <field name="ignore_empty_columns"/>
                             <field name="line_count"/>
+                            <field name="max_sequence"/>
                         </group>
                     </group>
                     <notebook>
