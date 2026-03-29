@@ -29,7 +29,7 @@ class GoogleSheet(models.Model):
     ], default='new', required=True, copy=False, string='Status')
     tag_ids = fields.Many2many('google.sheet.tag', string='Tags')
     line_count = fields.Integer(compute='_compute_line_count')
-    max_sequence = fields.Integer(compute='_compute_max_sequence')
+    max_sequence = fields.Integer(compute='_compute_max_sequence', inverse='_inverse_max_sequence')
 
     @api.depends('line_ids')
     def _compute_line_count(self):
@@ -41,6 +41,10 @@ class GoogleSheet(models.Model):
         for record in self:
             record.max_sequence = max(record.line_ids.mapped('sequence'), default=0)
 
+    def _inverse_max_sequence(self):
+        for record in self:
+            for line in record.line_ids:
+                line.sequence = max(line.sequence, record.max_sequence)
 
 class Google(models.Model):
     _name = 'google.sheet.tag'
