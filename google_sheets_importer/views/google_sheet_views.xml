@@ -34,6 +34,7 @@
                             invisible="state != 'importing'"/>
                     <button name="action_set_new" string="Reset to New" type="object"
                             invisible="state != 'done'"/>
+                    <button type="action" name="%(google_sheets_importer.google_sheet_tags_action)d" string="Open All Tags"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
