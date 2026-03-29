@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class GoogleSheet(models.Model):
@@ -28,6 +28,12 @@ class GoogleSheet(models.Model):
         ('done', 'Done')
     ], default='new', required=True, copy=False, string='Status')
     tag_ids = fields.Many2many('google.sheet.tag', string='Tags')
+    line_count = fields.Integer(compute='_compute_line_count')
+
+    @api.depends('line_ids')
+    def _compute_line_count(self):
+        for record in self:
+            record.line_count = len(record.line_ids)
 
 
 class Google(models.Model):
