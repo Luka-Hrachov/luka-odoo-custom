@@ -60,6 +60,7 @@
                         <page string="Mapping">
                             <field name="line_ids">
                                 <list editable="bottom">
+                                    <button name="action_test_line" type="object" icon="fa-flask" title="Test this line"/>
                                     <field name="sequence" widget="handle"/>
                                     <field name="sheet_column_name"/>
                                     <field name="odoo_field_id"/>

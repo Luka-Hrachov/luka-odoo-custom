@@ -20,3 +20,8 @@ class GoogleSheetLine(models.Model):
         string='Odoo Field',
     )
     sequence = fields.Integer(default=10)
+
+    def action_test_line(self):
+        for record in self:
+            print(f"Тестуємо колонку: {record.sheet_column_name}")
+        return True
