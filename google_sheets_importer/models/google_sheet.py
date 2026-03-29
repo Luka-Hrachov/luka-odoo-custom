@@ -27,3 +27,12 @@ class GoogleSheet(models.Model):
         ('importing', 'Importing'),
         ('done', 'Done')
     ], default='new', required=True, copy=False, string='Status')
+    tag_ids = fields.Many2many('google.sheet.tag', string='Tags')
+
+
+class Google(models.Model):
+    _name = 'google.sheet.tag'
+    _description = 'Google Sheet Tag'
+
+    name = fields.Char(required=True)
+    color = fields.Integer(string='Color')
