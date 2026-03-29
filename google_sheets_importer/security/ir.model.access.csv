@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_google_sheet,access_google_sheets_importer,model_google_sheet,base.group_user,1,1,1,1
 access_google_sheet_line,access_google_sheets_importer,model_google_sheet_line,base.group_user,1,1,1,1
+access_google_sheet_tags,access_google_sheet_tags,model_google_sheet_tag,base.group_user,1,1,1,1
