@@ -40,6 +40,7 @@
                         <group>
                             <field name="report_email"/>
                             <field name="ignore_empty_columns"/>
+                            <field name="line_count"/>
                         </group>
                     </group>
                     <notebook>
