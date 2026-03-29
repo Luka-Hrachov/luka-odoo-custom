@@ -67,9 +67,17 @@ class GoogleSheet(models.Model):
     def action_start_import(self):
         for record in self:
             record.state = 'importing'
-
         return True
 
+    def action_set_done(self):
+        for record in self:
+            record.state = 'done'
+        return True
+
+    def action_set_new(self):
+        for record in self:
+            record.state = 'new'
+        return True
 
 class Google(models.Model):
     _name = 'google.sheet.tag'

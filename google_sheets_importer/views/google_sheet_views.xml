@@ -25,6 +25,10 @@
                 <header>
                     <button name="action_start_import" string="Start Import" type="object" class="oe_highlight"
                             invisible="state != 'new'"/>
+                    <button name="action_set_done" string="Set to Done" type="object"
+                            invisible="state != 'importing'"/>
+                    <button name="action_set_new" string="Reset to New" type="object"
+                            invisible="state != 'done'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
