@@ -23,6 +23,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_start_import" string="Start Import" type="object" class="oe_highlight"
+                            invisible="[('state', '!=', 'new')]"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -48,9 +50,9 @@
                         <page string="Mapping">
                             <field name="line_ids">
                                 <list editable="bottom">
-                                    <field name="sequence" widget="handle"/> <field name="sheet_column_name"/>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="sheet_column_name"/>
                                     <field name="odoo_field_id"/>
-                                    <field name="sequence"/>
                                 </list>
                             </field>
                         </page>

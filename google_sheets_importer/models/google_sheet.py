@@ -64,6 +64,12 @@ class GoogleSheet(models.Model):
             for line in record.line_ids:
                 line.sequence = min(line.sequence, record.max_sequence)
 
+    def action_start_import(self):
+        for record in self:
+            record.state = 'importing'
+
+        return True
+
 
 class Google(models.Model):
     _name = 'google.sheet.tag'
