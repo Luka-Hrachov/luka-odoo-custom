@@ -83,9 +83,12 @@ class GoogleSheet(models.Model):
             record.state = 'new'
         return True
 
-class Google(models.Model):
+class GoogleSheetTag(models.Model):
     _name = 'google.sheet.tag'
     _description = 'Google Sheet Tag'
+    _sql_constraints = [
+        ('unique_tag_name', 'UNIQUE(name)', 'The tag name must be unique')
+    ]
 
     name = fields.Char(required=True)
     color = fields.Integer(string='Color')
