@@ -16,9 +16,10 @@
         <field name="model">google.sheet</field>
         <field name="arch" type="xml">
             <list string="Sheet" decoration-info="state == 'importing'" decoration-success="state == 'done'">
-                <field name="id"/>
+                <field name="id" optional="show"/>
                 <field name="name"/>
                 <field name="state"/>
+                <field name="user_id" optional="hide"/>
             </list>
         </field>
     </record>
