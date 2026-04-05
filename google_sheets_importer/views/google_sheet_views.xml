@@ -83,6 +83,8 @@
             <search>
                 <field name="name"/>
                 <field name="external_sheet_id"/>
+                <field name="line_count" string="Min lines" filter_domain="[('line_count', '>=', self)]"/>
+                <filter name="filter_new" string="New" domain="[('state', '=', 'new')]"/>
                 <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
                 <group expand="0" string="Group By">
                     <filter string="Status" name="group_by_state" context="{'group_by': 'state'}"/>
