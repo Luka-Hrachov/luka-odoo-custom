@@ -15,7 +15,7 @@
         <field name="name">google.sheet.list</field>
         <field name="model">google.sheet</field>
         <field name="arch" type="xml">
-            <list string="Sheet">
+            <list string="Sheet" decoration-info="state == 'importing'" decoration-success="state == 'done'">
                 <field name="id"/>
                 <field name="name"/>
                 <field name="state"/>
@@ -36,7 +36,7 @@
                     <button name="action_set_new" string="Reset to New" type="object"
                             invisible="state != 'done'"/>
                     <button type="action" name="%(google_sheets_importer.google_sheet_tags_action)d" string="Open All Tags"/>
-                    <field name="state" widget="statusbar" statusbar_visible="new,done"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,importing,done"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -46,13 +46,13 @@
                     </div>
                     <group>
                         <group>
-                            <field name="external_sheet_id"/>
+                            <field name="external_sheet_id" readonly="state != 'new'"/>
                             <field name="sheet_name"/>
                             <field name="user_id"/>
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                         <group>
-                            <field name="report_email"/>
+                            <field name="report_email" invisible="not ignore_empty_columns"/>
                             <field name="ignore_empty_columns"/>
                             <field name="line_count"/>
                             <field name="max_sequence"/>
