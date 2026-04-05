@@ -5,8 +5,12 @@ from odoo.exceptions import UserError, ValidationError
 class GoogleSheet(models.Model):
     _name = 'google.sheet'
     _description = 'Google Sheet Import'
+    _sql_constraints = [
+        ('unique_sheet', 'UNIQUE(external_sheet_id, sheet_name)', 'The sheet id and name must be unique')
+    ]
 
     name = fields.Char(required=True)
+    sheet_name = fields.Char(required=True)
     user_id = fields.Many2one(
         'res.users',
         string='Responsible',
@@ -42,24 +46,6 @@ class GoogleSheet(models.Model):
         for record in self:
             record.max_sequence = max(record.line_ids.mapped('sequence'), default=0)
 
-    @api.onchange('ignore_empty_columns')
-    def _onchange_ignore_empty_columns(self):
-        if self.ignore_empty_columns:
-            self.report_email = self.env.user.login
-        else:
-            self.report_email = False
-
-    @api.onchange('report_email')
-    def _onchange_report_email(self):
-        if self.ignore_empty_columns and (not self.report_email):
-            return {
-                'warning': {
-                    'title': 'Warning',
-                    'message': 'You must specify a report email address.'
-                }
-            }
-        return None
-
     def _inverse_max_sequence(self):
         for record in self:
             for line in record.line_ids:
@@ -90,6 +76,15 @@ class GoogleSheet(models.Model):
                 raise ValidationError('Google sheet id must have at least 10 characters')
 
         return None
+
+    @api.constrains('ignore_empty_columns', 'report_email')
+    def _report_email_check(self):
+        for record in self:
+            if record.ignore_empty_columns and not record.report_email:
+                raise ValidationError('Report email is required')
+
+        return None
+
 
 class GoogleSheetTag(models.Model):
     _name = 'google.sheet.tag'
