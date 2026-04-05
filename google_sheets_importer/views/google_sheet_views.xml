@@ -4,7 +4,9 @@
         <field name="name">Sheets</field>
         <field name="res_model">google.sheet</field>
         <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_filter_new': 1}</field>
     </record>
+
     <record id="google_sheet_tags_action" model="ir.actions.act_window">
         <field name="name">Tags</field>
         <field name="res_model">google.sheet.tag</field>
