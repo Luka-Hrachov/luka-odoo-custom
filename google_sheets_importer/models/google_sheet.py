@@ -8,6 +8,7 @@ class GoogleSheet(models.Model):
     _sql_constraints = [
         ('unique_sheet', 'UNIQUE(external_sheet_id, sheet_name)', 'The sheet id and name must be unique')
     ]
+    _order = 'id desc'
 
     name = fields.Char(required=True)
     sheet_name = fields.Char(required=True)

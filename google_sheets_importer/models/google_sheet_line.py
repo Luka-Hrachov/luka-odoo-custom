@@ -4,6 +4,7 @@ from odoo import fields, models
 class GoogleSheetLine(models.Model):
     _name = 'google.sheet.line'
     _description = 'Google Sheet Field Mapping'
+    _order = 'sequence'
 
     sheet_id = fields.Many2one(
         comodel_name='google.sheet',
