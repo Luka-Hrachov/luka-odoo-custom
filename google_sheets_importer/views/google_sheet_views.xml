@@ -20,7 +20,8 @@
             <form>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button icon="fa-table" type="action" name="%(google_sheet_action)d">
+                        <button icon="fa-table" type="action" name="%(google_sheet_action)d"
+                                context="{'search_default_tag_ids': active_id}">
                             <field name="sheets_count" widget="statinfo"/>
                         </button>
                     </div>
