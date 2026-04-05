@@ -1,5 +1,5 @@
 from odoo import fields, models, api
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 
 
 class GoogleSheet(models.Model):
@@ -82,6 +82,14 @@ class GoogleSheet(models.Model):
         for record in self:
             record.state = 'new'
         return True
+
+    @api.constrains('external_sheet_id')
+    def _check_external_sheet_id(self):
+        for record in self:
+            if not isinstance(record.external_sheet_id, str) or len(record.external_sheet_id) < 10:
+                raise ValidationError('Google sheet id must have at least 10 characters')
+
+        return None
 
 class GoogleSheetTag(models.Model):
     _name = 'google.sheet.tag'
