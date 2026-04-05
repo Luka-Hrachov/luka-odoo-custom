@@ -96,3 +96,12 @@ class GoogleSheetTag(models.Model):
 
     name = fields.Char(required=True)
     color = fields.Integer(string='Color')
+    sheets_count = fields.Integer(compute='_compute_sheets_count')
+    sheet_ids = fields.Many2many(comodel_name='google.sheet.sheet', string='Sheets')
+
+    @api.depends('sheet_ids')
+    def _compute_sheets_count(self):
+        for record in self:
+            record.sheets_count = len(record.sheet_ids)
+
+        return None
