@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 from odoo.exceptions import UserError, ValidationError
+from odoo.models import Model
 
 
 class GoogleSheet(models.Model):
@@ -85,6 +86,14 @@ class GoogleSheet(models.Model):
                 raise ValidationError('Report email is required')
 
         return None
+
+    @api.model
+    def create(self, vals):
+        for el in vals:
+            if el['name'] == 'amogus':
+                raise ValidationError('Name can not be \'amogus\'')
+
+        super().create(vals)
 
 
 class GoogleSheetTag(models.Model):
