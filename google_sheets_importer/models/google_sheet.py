@@ -98,6 +98,13 @@ class GoogleSheet(models.Model):
 
         return super().create(vals)
 
+    @api.ondelete(at_uninstall=False)
+    def _unlink_if_name_is_bebra(self):
+        if any(record.name == 'bebra' for record in self):
+            raise ValidationError('You cannot unlink bebra')
+
+        return None
+
 
 class GoogleSheetTag(models.Model):
     _name = 'google.sheet.tag'
