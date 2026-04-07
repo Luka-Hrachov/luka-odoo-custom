@@ -89,11 +89,14 @@ class GoogleSheet(models.Model):
 
     @api.model
     def create(self, vals):
+        if isinstance(vals, dict):
+            vals = [vals]
+
         for el in vals:
             if el['name'] == 'amogus':
                 raise ValidationError('Name can not be \'amogus\'')
 
-        super().create(vals)
+        return super().create(vals)
 
 
 class GoogleSheetTag(models.Model):
