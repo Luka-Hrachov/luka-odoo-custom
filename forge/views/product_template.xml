@@ -8,6 +8,13 @@
             <xpath expr="//field[@name='barcode']" position="after">
                 <field name="website_ids" widget="many2many_tags"/>
             </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Forge" name="forge_content">
+                    <group>
+                        <field name="website_description" widget="html"/>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
 </odoo>
