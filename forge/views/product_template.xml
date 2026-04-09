@@ -11,7 +11,7 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Forge" name="forge_content">
                     <group>
-                        <field name="website_description" widget="html"/>
+                        <field name="website_description" widget="html" options="{'sanitize': false}"/>
                     </group>
                 </page>
             </xpath>
